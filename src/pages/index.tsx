@@ -26,7 +26,7 @@ const Home: NextPage<IProductListProps> = ({
   return (
     <>
       <Head>
-        <title>Azalia now</title>
+        <title>AzaliaNow</title>
         <meta name="description" content="Купить электронику" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

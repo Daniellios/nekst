@@ -10,14 +10,6 @@
   align-items: center;
   cursor: pointer;
   border: 1px solid $red;
-
-  & path {
-    stroke: $red;
-  }
-
-  & svg circle {
-    stroke: $red;
-  }
 }
 
 .unfavorite {
@@ -27,12 +19,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid transparent;
   cursor: pointer;
-
-  & path {
-    stroke: $text-main-gray;
-  }
 }
 
 .tag__title {
