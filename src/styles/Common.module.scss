@@ -63,3 +63,29 @@
     }
   }
 }
+
+.absolute {
+  display: flex;
+  justify-content: center;
+  right: 8px;
+  width: 60px;
+  position: absolute;
+  align-items: center;
+
+  &.yellowTag {
+    color: black;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 700;
+    & svg path {
+      fill: $yellow;
+    }
+  }
+
+  &.redTag {
+    color: white;
+    & svg path {
+      fill: $light-red;
+    }
+  }
+}

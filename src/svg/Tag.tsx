@@ -4,6 +4,7 @@ import styles from "../styles/Common.module.scss";
 interface ITagProps {
   style: TagStyle;
   title: string;
+  isAbsolute?: boolean;
 }
 
 export enum TagStyle {
@@ -11,9 +12,15 @@ export enum TagStyle {
   yellow = "yellowTag",
 }
 
-const Tag: FC<ITagProps> = ({ style, title }) => {
+const Tag: FC<ITagProps> = ({ style, title, isAbsolute }) => {
   return (
-    <div className={`${styles.tag} ${styles[style]}`}>
+    <div
+      className={
+        isAbsolute
+          ? `${styles.absolute} ${styles[style]}`
+          : `${styles.tag} ${styles[style]}`
+      }
+    >
       <svg
         width="72"
         height="24"

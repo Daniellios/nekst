@@ -39,10 +39,12 @@ const ProductDeals = () => {
 
         <div className={styles.deal__banner_second}>
           <div className={styles.deal__banner_description}>
-            <Tag style={TagStyle.yellow} title="10%"></Tag>
+            <Tag style={TagStyle.yellow} title="10%" isAbsolute={true}></Tag>
 
             <div className={styles.deal__banner_text}>
-              <p>Скидка на перифирию</p>
+              <p>
+                Скидка <br /> на перифирию
+              </p>
               <Link href={"/"}>Выбрать</Link>
             </div>
           </div>

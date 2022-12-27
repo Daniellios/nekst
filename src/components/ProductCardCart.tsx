@@ -1,16 +1,18 @@
 import React, { type FC, useState } from "react";
-import { useAppContext } from "../context/state";
+import { CartContext } from "../context/state";
 import styles from "../styles/Home.module.scss";
 import Favorite from "../svg/Favorite";
-import { type ICart } from "../types/product.interface";
+import type { ICartContext, ICartItem } from "../types/product.interface";
 
 interface IProductCartProps {
   productID: number;
 }
 
 const ProductCardCart: FC<IProductCartProps> = ({ productID }) => {
-  const cart = useAppContext();
+  const { addToCart, cart } = React.useContext(CartContext) as ICartContext;
+
   console.log(cart);
+
   const [productAmount, setProductAmount] = useState<number>(1);
   const [isInCart, setIsInCart] = useState<boolean>(false);
 
@@ -24,34 +26,27 @@ const ProductCardCart: FC<IProductCartProps> = ({ productID }) => {
     }
   };
 
-  const addToCart = () => {
-    if (isInCart) {
-      setIsInCart(false);
-
-      return cart.map((product) => {
-        if (product.productID !== productID) {
-          return product;
-        }
-      });
-    } else {
-      const newItem: ICart = {
-        productID: productID,
-        quantity: productAmount,
-      };
-      cart.push(newItem);
-      setIsInCart(true);
-    }
+  const addProductToCart = () => {
+    const newItem: ICartItem = {
+      productID: productID,
+      quantity: productAmount,
+    };
+    setIsInCart(!isInCart);
+    addToCart(newItem);
   };
 
   return (
     <div className={styles.product__engage}>
       {isInCart ? (
-        <button className={styles.product__cart_in} onClick={addToCart}>
+        <button className={styles.product__cart_in} onClick={addProductToCart}>
           В корзинe
         </button>
       ) : (
         <div className={styles.product__cart_management}>
-          <button className={styles.product__cart_add} onClick={addToCart}>
+          <button
+            className={styles.product__cart_add}
+            onClick={addProductToCart}
+          >
             В корзину
           </button>
 

@@ -1,4 +1,10 @@
-export interface ICart {
+export interface ICartContext {
+  cart: ICartItem[];
+  addToCart: (product: ICartItem) => void;
+  deleteFromCart: (product: ICartItem) => void;
+}
+
+export interface ICartItem {
   productID: number;
   quantity: number;
 }
