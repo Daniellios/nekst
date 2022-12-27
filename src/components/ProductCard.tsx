@@ -17,7 +17,7 @@ const ProductCard: FC<IProduct> = ({
   title,
 }) => {
   return (
-    <div key={id} className={styles.product__card}>
+    <div className={styles.product__card}>
       {rating.count >= 300 ? (
         <div className={styles.product__card_hit}>
           <Tag style={TagStyle.red} title="Хит"></Tag>
