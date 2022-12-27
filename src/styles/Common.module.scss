@@ -1,0 +1,65 @@
+@import "./colors.scss";
+@import "./queries.scss";
+
+.favorite {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid $red;
+
+  & path {
+    stroke: $red;
+  }
+
+  & svg circle {
+    stroke: $red;
+  }
+}
+
+.unfavorite {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+
+  & path {
+    stroke: $text-main-gray;
+  }
+}
+
+.tag__title {
+  position: absolute;
+  z-index: 10;
+}
+
+.tag {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+
+  &.yellowTag {
+    color: black;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 700;
+    & svg path {
+      fill: $yellow;
+    }
+  }
+
+  &.redTag {
+    color: white;
+    & svg path {
+      fill: $light-red;
+    }
+  }
+}

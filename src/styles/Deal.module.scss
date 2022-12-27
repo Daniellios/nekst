@@ -1,0 +1,100 @@
+@import "./colors.scss";
+@import "./queries.scss";
+
+.deal {
+  display: flex;
+  flex-direction: column;
+  row-gap: 34px;
+  width: 100%;
+  max-width: 332px;
+}
+
+.deal__top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: flex-start;
+}
+
+.deal__title {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 40px;
+}
+
+.deal__bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  & a {
+    cursor: pointer;
+
+    font-size: 11px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.deal__banner_first {
+  display: flex;
+  height: 140px;
+
+  & .deal__banner_description {
+    color: white;
+    background-color: $bg-deal-gray;
+  }
+
+  & .deal__banner_img {
+    width: 50%;
+  }
+
+  & a {
+    font-weight: 500;
+  }
+}
+
+.deal__banner_second {
+  display: flex;
+  height: 140px;
+  & .deal__banner_description {
+    color: $text-main-black;
+    background-color: white;
+  }
+
+  & .deal__banner_img {
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+
+    @media #{$mq-380-down} {
+      width: 60%;
+    }
+  }
+
+  & a {
+    opacity: 0.7;
+  }
+}
+
+.deal__banner_description {
+  display: flex;
+  row-gap: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 22px 0 22px 11px;
+  width: 50%;
+}
+
+.deal__banner_text {
+  padding-left: 13px;
+
+  & p {
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 6px;
+  }
+}
