@@ -1,6 +1,12 @@
-export interface ICartContext {
+export interface IAppContext {
   cart: ICartItem[];
+  favorites: IFavoriteItem[];
   addToCart: (product: ICartItem) => void;
+  addToFavorite: (product: IFavoriteItem) => void;
+}
+
+export interface IFavoriteItem {
+  productID: number;
 }
 
 export interface ICartItem {

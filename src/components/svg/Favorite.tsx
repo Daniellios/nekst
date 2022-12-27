@@ -1,16 +1,27 @@
-import React, { useState, type FC } from "react";
+import React, { useContext, useState, type FC } from "react";
+import { AppContext } from "../../context/appContext";
 import styles from "../../styles/Common.module.scss";
+import type { IAppContext, IFavoriteItem } from "../../types/product.interface";
 
-const Favorite: FC = () => {
+interface IFavoriteProps {
+  productID: number;
+}
+
+const Favorite: FC<IFavoriteProps> = ({ productID }) => {
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
+  const { addToFavorite } = useContext(AppContext) as IAppContext;
 
-  const addToFavorite = () => {
+  const addToFavorites = () => {
+    const newItem: IFavoriteItem = {
+      productID: productID,
+    };
     setIsFavorite(!isFavorite);
+    addToFavorite(newItem);
   };
 
   return (
     <div
-      onClick={addToFavorite}
+      onClick={addToFavorites}
       className={isFavorite ? styles.favorite : styles.unfavorite}
     >
       <svg

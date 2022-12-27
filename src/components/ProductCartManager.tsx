@@ -1,15 +1,15 @@
 import React, { type FC, useState, useContext } from "react";
-import { CartContext } from "../context/cartContext";
+import { AppContext } from "../context/appContext";
 import styles from "../styles/Home.module.scss";
 import Favorite from "./svg/Favorite";
-import type { ICartContext, ICartItem } from "../types/product.interface";
+import type { IAppContext, ICartItem } from "../types/product.interface";
 
 interface IProductCartManager {
   productID: number;
 }
 
 const ProductCartManager: FC<IProductCartManager> = ({ productID }) => {
-  const { addToCart } = useContext(CartContext) as ICartContext;
+  const { addToCart } = useContext(AppContext) as IAppContext;
 
   const [productAmount, setProductAmount] = useState<number>(1);
   const [isInCart, setIsInCart] = useState<boolean>(false);
@@ -91,7 +91,7 @@ const ProductCartManager: FC<IProductCartManager> = ({ productID }) => {
         </div>
       )}
 
-      <Favorite></Favorite>
+      <Favorite productID={productID}></Favorite>
     </div>
   );
 };
