@@ -1,4 +1,4 @@
-import React, { type FC, useState } from "react";
+import React, { type FC, useState, useContext } from "react";
 import { CartContext } from "../context/state";
 import styles from "../styles/Home.module.scss";
 import Favorite from "./svg/Favorite";
@@ -9,7 +9,7 @@ interface IProductCartManager {
 }
 
 const ProductCartManager: FC<IProductCartManager> = ({ productID }) => {
-  const { addToCart } = React.useContext(CartContext) as ICartContext;
+  const { addToCart } = useContext(CartContext) as ICartContext;
 
   const [productAmount, setProductAmount] = useState<number>(1);
   const [isInCart, setIsInCart] = useState<boolean>(false);
