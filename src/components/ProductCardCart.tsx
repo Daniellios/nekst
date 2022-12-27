@@ -9,9 +9,7 @@ interface IProductCartProps {
 }
 
 const ProductCardCart: FC<IProductCartProps> = ({ productID }) => {
-  const { addToCart, cart } = React.useContext(CartContext) as ICartContext;
-
-  console.log(cart);
+  const { addToCart } = React.useContext(CartContext) as ICartContext;
 
   const [productAmount, setProductAmount] = useState<number>(1);
   const [isInCart, setIsInCart] = useState<boolean>(false);
