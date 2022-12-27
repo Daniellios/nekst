@@ -1,5 +1,5 @@
 import React, { useState, type FC } from "react";
-import styles from "../styles/Common.module.scss";
+import styles from "../../styles/Common.module.scss";
 
 const Favorite: FC = () => {
   const [isFavorite, setIsFavorite] = useState<boolean>(false);

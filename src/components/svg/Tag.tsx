@@ -1,5 +1,5 @@
 import React, { type FC } from "react";
-import styles from "../styles/Common.module.scss";
+import styles from "../../styles/Common.module.scss";
 
 interface ITagProps {
   style: TagStyle;

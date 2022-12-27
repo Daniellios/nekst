@@ -2,7 +2,7 @@ import React, { type FC } from "react";
 import type { IRating } from "../types/product.interface";
 import styles from "../styles/Home.module.scss";
 import calculateRating from "../utils/calculateRating";
-import RatingStar from "../svg/RatingStar";
+import RatingStar from "./svg/RatingStar";
 import { calculateReviews } from "../utils/calculateReviews";
 import Link from "next/link";
 

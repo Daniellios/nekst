@@ -32,5 +32,3 @@ export const AppState: FC<IAppProps> = ({ children }) => {
     </CartContext.Provider>
   );
 };
-
-export default AppState;

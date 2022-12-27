@@ -4,7 +4,7 @@ import ProductCardCart from "./ProductCardCart";
 import { calculatePrice } from "../utils/calculatePrice";
 import styles from "../styles/Home.module.scss";
 import Image from "next/image";
-import Tag, { TagStyle } from "../svg/Tag";
+import Tag, { TagStyle } from "./svg/Tag";
 import ProductaCardReview from "./ProductaCardReview";
 
 const ProductCard: FC<IProduct> = ({

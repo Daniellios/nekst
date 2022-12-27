@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 import styles from "../styles/Deal.module.scss";
-import Tag, { TagStyle } from "../svg/Tag";
+import Tag, { TagStyle } from "./svg/Tag";
 
 const ProductDeals = () => {
   return (
