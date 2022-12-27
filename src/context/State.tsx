@@ -6,7 +6,7 @@ import { type ICart } from "../types/product.interface";
 export interface IAppProps {
   children: React.ReactNode;
 }
-const CartContext = createContext<ICart[]>([]);
+export const CartContext = createContext<ICart[]>([]);
 
 export const AppState: FC<IAppProps> = ({ children }) => {
   return <CartContext.Provider value={[]}>{children}</CartContext.Provider>;

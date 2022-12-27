@@ -9,9 +9,8 @@ interface IProductCartProps {
 }
 
 const ProductCardCart: FC<IProductCartProps> = ({ productID }) => {
-  let cart = useAppContext();
+  const cart = useAppContext();
   console.log(cart);
-
   const [productAmount, setProductAmount] = useState<number>(1);
   const [isInCart, setIsInCart] = useState<boolean>(false);
 
@@ -28,7 +27,12 @@ const ProductCardCart: FC<IProductCartProps> = ({ productID }) => {
   const addToCart = () => {
     if (isInCart) {
       setIsInCart(false);
-      cart = cart.filter((product) => product.productID !== productID);
+
+      return cart.map((product) => {
+        if (product.productID !== productID) {
+          return product;
+        }
+      });
     } else {
       const newItem: ICart = {
         productID: productID,
