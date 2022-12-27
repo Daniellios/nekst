@@ -5,7 +5,7 @@ import { calculatePrice } from "../utils/calculatePrice";
 import styles from "../styles/Home.module.scss";
 import Image from "next/image";
 import Tag, { TagStyle } from "./svg/Tag";
-import ProductaCardReview from "./ProductaCardReview";
+import ProductCardReview from "./ProductCardReview";
 
 const ProductCard: FC<IProduct> = ({
   id,
@@ -31,12 +31,7 @@ const ProductCard: FC<IProduct> = ({
       </div>
 
       <div className={styles.product__card_info}>
-        {/* CATERGOTY AND REVIEW */}
-        <div className={styles.product__ratings}>
-          <p className={styles.product__category}>{category}</p>
-
-          <ProductaCardReview {...rating}></ProductaCardReview>
-        </div>
+        <ProductCardReview {...rating} category={category}></ProductCardReview>
 
         {/* DESCRIPTION AND PRICE */}
         <div className={styles.product__info}>
