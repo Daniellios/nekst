@@ -1,6 +1,6 @@
 import React, { type FC } from "react";
 import type { IProduct } from "../types/product.interface";
-import ProductCardCart from "./ProductCardCart";
+import ProductCartManager from "./ProductCartManager";
 import { calculatePrice } from "../utils/calculatePrice";
 import styles from "../styles/Home.module.scss";
 import Image from "next/image";
@@ -48,7 +48,7 @@ const ProductCard: FC<IProduct> = ({
           </span>
         </div>
 
-        <ProductCardCart productID={id}></ProductCardCart>
+        <ProductCartManager productID={id}></ProductCartManager>
       </div>
     </div>
   );

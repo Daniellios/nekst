@@ -4,11 +4,11 @@ import styles from "../styles/Home.module.scss";
 import Favorite from "./svg/Favorite";
 import type { ICartContext, ICartItem } from "../types/product.interface";
 
-interface IProductCartProps {
+interface IProductCartManager {
   productID: number;
 }
 
-const ProductCardCart: FC<IProductCartProps> = ({ productID }) => {
+const ProductCartManager: FC<IProductCartManager> = ({ productID }) => {
   const { addToCart } = React.useContext(CartContext) as ICartContext;
 
   const [productAmount, setProductAmount] = useState<number>(1);
@@ -96,4 +96,4 @@ const ProductCardCart: FC<IProductCartProps> = ({ productID }) => {
   );
 };
 
-export default ProductCardCart;
+export default ProductCartManager;
