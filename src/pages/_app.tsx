@@ -1,5 +1,5 @@
 import { type AppType } from "next/dist/shared/lib/utils";
-import { AppState } from "../context/state";
+import { AppState } from "../context/cartContext";
 
 import "../styles/globals.scss";
 

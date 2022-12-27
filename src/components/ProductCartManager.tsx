@@ -1,5 +1,5 @@
 import React, { type FC, useState, useContext } from "react";
-import { CartContext } from "../context/state";
+import { CartContext } from "../context/cartContext";
 import styles from "../styles/Home.module.scss";
 import Favorite from "./svg/Favorite";
 import type { ICartContext, ICartItem } from "../types/product.interface";
