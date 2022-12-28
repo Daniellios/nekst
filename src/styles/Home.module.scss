@@ -109,6 +109,7 @@
 .product__description {
   display: block;
   overflow: hidden;
+  min-height: 4.125em;
   text-overflow: ellipsis;
   max-height: 4.125em;
   word-wrap: break-word;
