@@ -35,7 +35,9 @@ const ProductCard: FC<IProduct> = ({
 
         {/* DESCRIPTION AND PRICE */}
         <div className={styles.product__info}>
-          <p className={styles.product__description}>{description}</p>
+          <p className={styles.product__description}>
+            {title ? title : description}
+          </p>
 
           <span className={styles.product__price}>
             {calculatePrice(price)} ₽
@@ -43,7 +45,11 @@ const ProductCard: FC<IProduct> = ({
           </span>
         </div>
 
-        <ProductCartManager productID={id}></ProductCartManager>
+        <ProductCartManager
+          productID={id}
+          title={title}
+          image={image}
+        ></ProductCartManager>
       </div>
     </div>
   );

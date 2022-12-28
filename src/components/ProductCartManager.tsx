@@ -6,9 +6,15 @@ import type { IAppContext, ICartItem } from "../types/product.interface";
 
 interface IProductCartManager {
   productID: number;
+  image: string;
+  title: string;
 }
 
-const ProductCartManager: FC<IProductCartManager> = ({ productID }) => {
+const ProductCartManager: FC<IProductCartManager> = ({
+  productID,
+  title,
+  image,
+}) => {
   const { addToCart } = useContext(AppContext) as IAppContext;
 
   const [productAmount, setProductAmount] = useState<number>(1);
@@ -28,6 +34,8 @@ const ProductCartManager: FC<IProductCartManager> = ({ productID }) => {
     const newItem: ICartItem = {
       productID: productID,
       quantity: productAmount,
+      productName: title,
+      productImg: image,
     };
     setIsInCart(!isInCart);
     addToCart(newItem);
@@ -85,7 +93,7 @@ const ProductCartManager: FC<IProductCartManager> = ({ productID }) => {
         </div>
       )}
 
-      <Favorite productID={productID}></Favorite>
+      <Favorite productID={productID} title={title} image={image}></Favorite>
     </div>
   );
 };

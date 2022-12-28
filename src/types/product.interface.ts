@@ -7,10 +7,14 @@ export interface IAppContext {
 
 export interface IFavoriteItem {
   productID: number;
+  productName: string;
+  productImg: string;
 }
 
 export interface ICartItem {
   productID: number;
+  productName: string;
+  productImg: string;
   quantity: number;
 }
 

@@ -5,15 +5,19 @@ import type { IAppContext, IFavoriteItem } from "../../types/product.interface";
 
 interface IFavoriteProps {
   productID: number;
+  image: string;
+  title: string;
 }
 
-const Favorite: FC<IFavoriteProps> = ({ productID }) => {
+const Favorite: FC<IFavoriteProps> = ({ productID, image, title }) => {
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
   const { addToFavorite } = useContext(AppContext) as IAppContext;
 
   const addToFavorites = () => {
     const newItem: IFavoriteItem = {
       productID: productID,
+      productName: title,
+      productImg: image,
     };
     setIsFavorite(!isFavorite);
     addToFavorite(newItem);
